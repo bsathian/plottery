@@ -6,7 +6,7 @@ import plottery as ply
 0 to print out all possible options and their defaults
 1 to show two simply overlaid 1D hists
 2 to show overlaid 1D hists with signals, data, ratio
-3 to show three TGraph ROC curves 
+3 to show three TGraph ROC curves
 4 to show a TH2D with smart bin labels
 """
 which_tests = [0, 1, 2, 3, 4]
@@ -28,7 +28,6 @@ for which_test in which_tests:
                 "do_stack": False,
                 "yaxis_log": True,
                 "output_name": "examples/test1.pdf",
-                "output_ic": True,
                 }
             )
 
@@ -36,7 +35,7 @@ for which_test in which_tests:
 
         scalefact_all = 500
         scalefact_mc = 15
-        
+
         nbins = 30
         h1 = r.TH1F("h1","h1",nbins,0,5)
         h1.FillRandom("gaus",int(scalefact_mc*6*scalefact_all))
@@ -90,7 +89,6 @@ for which_test in which_tests:
                     "legend_percentageinbox": True,
                     "cms_label": "Preliminary",
                     "lumi_value": "-inf",
-                    "output_ic": True,
                     "us_flag": True,
                     # "output_jsroot": True,
                     # "output_diff_previous": True,
@@ -125,11 +123,10 @@ for which_test in which_tests:
                     "yaxis_range": [0.1,1.0],
                     "title": "Crappy ROC curve",
                     "output_name": "examples/test3.pdf",
-                    "output_ic": True,
                     }
                 )
 
-        
+
     elif which_test == 4:
 
         xyg = r.TF2("xygaus","xygaus",0,10,0,10);
@@ -143,7 +140,6 @@ for which_test in which_tests:
                     "bin_text_smart": True,
                     "output_name": "examples/test4.pdf",
                     "us_flag": True,
-                    "output_ic": True,
                     "zaxis_noexponents": True,
                     }
                 )
