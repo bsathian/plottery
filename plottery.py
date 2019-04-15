@@ -2,7 +2,7 @@
 
 import os
 import ROOT as r
-import utils
+import plottery.utils as utils
 from array import array
 import math
 from itertools import cycle
