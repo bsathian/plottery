@@ -1,6 +1,6 @@
 import ROOT as r
 import os
-import plottery as ply
+from . import plottery as ply
 
 """
 0 to print out all possible options and their defaults
@@ -27,7 +27,7 @@ for which_test in which_tests:
             options = {
                 "do_stack": False,
                 "yaxis_log": True,
-                "output_name": "examples/test1.pdf",
+                "output_name": "plottery/examples/test1.pdf",
                 }
             )
 
@@ -85,7 +85,7 @@ for which_test in which_tests:
                     # "ratio_pull": True,
                     "hist_disable_xerrors": True,
                     "ratio_chi2prob": True,
-                    "output_name": "examples/test2.pdf",
+                    "output_name": "plottery/examples/test2.pdf",
                     "legend_percentageinbox": True,
                     "cms_label": "Preliminary",
                     "lumi_value": "-inf",
@@ -122,7 +122,7 @@ for which_test in which_tests:
                     "xaxis_range": [0.1,1.0],
                     "yaxis_range": [0.1,1.0],
                     "title": "Crappy ROC curve",
-                    "output_name": "examples/test3.pdf",
+                    "output_name": "plottery/examples/test3.pdf",
                     }
                 )
 
@@ -138,7 +138,7 @@ for which_test in which_tests:
                 options = {
                     "zaxis_log": True,
                     "bin_text_smart": True,
-                    "output_name": "examples/test4.pdf",
+                    "output_name": "plottery/examples/test4.pdf",
                     "us_flag": True,
                     "zaxis_noexponents": True,
                     }
