@@ -1,8 +1,7 @@
 # coding: utf-8
-
 import os
 import ROOT as r
-import plottery.utils as utils
+from . import utils
 from array import array
 import math
 from itertools import cycle
