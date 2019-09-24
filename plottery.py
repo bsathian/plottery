@@ -171,6 +171,8 @@ class Options(object):
             "extra_text_ypos": { "type": "Float", "desc": "NDC y position (0 to 1) for extra text", "default": 0.87, "kinds": [ "1dratio","graph"], },
 
             "extra_lines": { "type": "List", "desc": "list of 4-tuples (x1,y1,x2,y2) for lines", "default": [], "kinds": [ "1dratio","graph"], },
+            "extra_dashed_lines" : { "type": "List", "desc": "list of 4-tuples (x1,y1,x2,y2) for dashed lines", "default": [], "kinds": [ "1dratio","graph"], },
+
             "no_overflow": {"type":"Boolean","desc":"Do not plot overflow bins","default": False, "kinds" : ["1dratio"],},
 
             # Fun
@@ -879,8 +881,22 @@ def draw_extra_stuff(c1, opts):
             line = r.TLine()
             line.SetLineColor(r.kGray+2)
             line.SetLineWidth(1)
+            line.SetLineStyle(1)
+            line.DrawLine(*lcoords)
+
+    if opts["extra_dashed_lines"]:
+        for iline,lcoords in enumerate(opts["extra_dashed_lines"]):
+            if len(lcoords) != 4:
+                print(">>> Malformed dotted line coordinates (length should be 4 but is {})".format(len(lcoords)))
+                continue
+
+            line = r.TLine()
+            line.SetLineColor(r.kGray+2)
+            line.SetLineWidth(1)
             line.SetLineStyle(2)
             line.DrawLine(*lcoords)
+
+
 
 
 def save(c1, opts):
